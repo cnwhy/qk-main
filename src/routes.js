@@ -8,14 +8,16 @@ const route = [
 ]
 const routes = [
     {
-        exact: true,
-        path: '/',
-        redirect: '/home'
-    },
-    {
         path: '/',
         component: '@/layouts/index',
-        routes: route
+        routes: [
+          {
+              exact: true,
+              path: '/',
+              redirect: '/home'
+          },
+          ...route
+        ]
     }
 ]
 module.exports = routes;
